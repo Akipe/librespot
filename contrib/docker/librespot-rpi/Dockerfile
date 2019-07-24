@@ -1,6 +1,6 @@
 # Create a docker image for the RPI
 # Build the docker image from the root of the project with the following command :
-# $ docker build -t librespot-rpi -f .\contrib\Dockerfile.Rpi .
+# $ docker build -t librespot-rpi -f contrib\docker\librespot-rpi\Dockerfile .
 #
 # This builds a docker image which is usable when running docker on the rpi.
 # 
@@ -9,7 +9,7 @@
 # (see here for more info: https://gist.github.com/PieterScheffers/d50f609d9628383e4c9d8d7d269b7643 )
 #
 # Save the docker image to a file:
-# $ docker save -o contrib/librespot-rpi librespot-rpi
+# $ docker save -o contrib/docker/librespot-rpi/image librespot-rpi
 #
 # Move it to the rpi and import it with:
 # docker load -i librespot-rpi

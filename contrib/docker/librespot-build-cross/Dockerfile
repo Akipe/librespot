@@ -1,17 +1,17 @@
 # Cross compilation environment for librespot
 # Build the docker image from the root of the project with the following command :
-# $ docker build -t librespot-cross -f contrib/Dockerfile .
+# $ docker build -t librespot-build-cross -f contrib/docker/librespot-build-cross/Dockerfile .
 #
 # The resulting image can be used to build librespot for linux x86_64, armhf(with support for armv6hf), armel, mipsel, aarch64
-# $ docker run -v /tmp/librespot-build:/build librespot-cross
+# $ docker run -v /tmp/librespot-build:/build librespot-build-cross
 #
 # The compiled binaries will be located in /tmp/librespot-build
 #
 # If only one architecture is desired, cargo can be invoked directly with the appropriate options :
-# $ docker run -v /tmp/librespot-build:/build librespot-cross cargo build --release --no-default-features --features "alsa-backend"
-# $ docker run -v /tmp/librespot-build:/build librespot-cross cargo build --release --target arm-unknown-linux-gnueabihf --no-default-features --features "alsa-backend"
-# $ docker run -v /tmp/librespot-build:/build librespot-cross cargo build --release --target arm-unknown-linux-gnueabi --no-default-features --features "alsa-backend"
-# $ docker run -v /tmp/librespot-build:/build librespot-cross contrib/docker-build-pi-armv6hf.sh
+# $ docker run -v /tmp/librespot-build:/build librespot-build-cross cargo build --release --no-default-features --features "alsa-backend"
+# $ docker run -v /tmp/librespot-build:/build librespot-build-cross cargo build --release --target arm-unknown-linux-gnueabihf --no-default-features --features "alsa-backend"
+# $ docker run -v /tmp/librespot-build:/build librespot-build-cross cargo build --release --target arm-unknown-linux-gnueabi --no-default-features --features "alsa-backend"
+# $ docker run -v /tmp/librespot-build:/build librespot-build-cross contrib/docker/librespot-build-cross/docker-build-pi-armv6hf.sh
 
 FROM debian:stretch
 
